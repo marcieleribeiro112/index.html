@@ -1,141 +1,131 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prudentópolis - Terra das Cachoeiras</title>
+<title>Céu Azul | Turismo e Natureza</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#f5f8f4;color:#26382e;line-height:1.7}
-header{
-background:linear-gradient(#102e22bb,#102e22bb),
-url('https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1500&q=80') center/cover;
-color:white;text-align:center;padding:90px 20px
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#f7f8f4;color:#24372d;line-height:1.7}
+header{background:linear-gradient(90deg,#103c2ddf,#103c2d55),url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80') center/cover;color:white;min-height:80vh}
+nav{padding:25px 8%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.logo{font-size:22px;font-weight:bold;letter-spacing:2px}
+nav a{color:white;text-decoration:none;margin-left:20px}
+.hero{padding:120px 8% 100px}
+.hero small{color:#e8d5a4;letter-spacing:4px;text-transform:uppercase}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.1;margin:20px 0}
+.hero p{max-width:620px;font-size:19px}
+.botao{display:inline-block;margin-top:25px;padding:13px 25px;background:#d9bd78;color:#173c2d;text-decoration:none;font-weight:bold;border-radius:5px}
+main{max-width:1150px;margin:auto;padding:0 25px}
+section{padding:75px 0}
+.etiqueta{color:#38805a;font-weight:bold;letter-spacing:3px;font-size:13px}
+h2{font-size:clamp(28px,4vw,42px);color:#174d37;margin:12px 0 20px}
+.intro{max-width:800px;color:#637167}
+.dados,.cartoes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+.dado,.cartao{background:white;border-radius:12px;overflow:hidden;box-shadow:0 5px 20px #173c2d12}
+.dado{padding:24px;border:1px solid #e0e8df}
+.dado h3,.cartao h3{color:#20583e;margin-bottom:10px}
+.cartao img{width:100%;height:220px;object-fit:cover;display:block}
+.conteudo{padding:22px}
+.conteudo p,.dado p{color:#637167;font-size:15px}
+.selo{display:inline-block;background:#e8f1e8;color:#20583e;padding:4px 10px;border-radius:20px;font-size:12px;margin-bottom:10px}
+.orcamento{background:#eaf1e9;padding:clamp(22px,5vw,45px);border-radius:15px}
+table{width:100%;border-collapse:collapse;background:white;margin-top:25px}
+th,td{padding:14px;text-align:left;border-bottom:1px solid #e0e8df}
+th{background:#174d37;color:white}
+.total{font-weight:bold;color:#174d37}
+.aviso{font-size:13px;color:#637167;margin-top:18px}
+footer{background:#123c2d;color:white;text-align:center;padding:30px 20px;margin-top:40px}
+@media(max-width:750px){
+ nav{align-items:flex-start;flex-direction:column}
+ nav a{margin:0 12px 0 0;display:inline-block}
+ .hero{padding:90px 8%}
+ .dados,.cartoes{grid-template-columns:1fr}
+ section{padding:50px 0}
+ .cartao img{height:230px}
+ th,td{padding:10px 7px;font-size:13px}
 }
-header h1{font-size:clamp(35px,7vw,60px);margin:12px 0}
-header p{font-size:18px}
-nav{background:#204832;padding:15px;text-align:center;position:sticky;top:0}
-nav a{color:white;text-decoration:none;margin:0 12px;font-weight:bold}
-nav a:hover{color:#cce6b9}
-.container{max-width:1050px;width:90%;margin:auto}
-section{padding:55px 0}
-h2{text-align:center;color:#204832;font-size:30px;margin-bottom:25px}
-.intro{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
-.intro img{width:100%;height:300px;object-fit:cover;border-radius:15px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
-.card{background:white;border-radius:14px;overflow:hidden;box-shadow:0 5px 18px #00000012}
-.card img{width:100%;height:190px;object-fit:cover}
-.card div{padding:20px}
-.card h3{color:#28613d;margin-bottom:8px}
-.green{background:#e8f0e6}
-.price{display:inline-block;background:#e0efda;color:#204832;padding:6px 10px;border-radius:7px;font-weight:bold;margin-top:10px}
-table{width:100%;border-collapse:collapse;background:white}
-th,td{padding:13px;text-align:left;border-bottom:1px solid #ddd}
-th{background:#204832;color:white}
-.total{text-align:center;background:#204832;color:white;border-radius:14px;padding:25px;margin-top:22px}
-.total strong{display:block;font-size:35px}
-.note{font-size:13px;color:#59665b;margin-top:18px}
-footer{background:#142f22;color:white;text-align:center;padding:28px}
-@media(max-width:650px){.intro{grid-template-columns:1fr}.intro img{height:230px}nav a{display:inline-block;margin:5px;font-size:13px}th,td{padding:9px 6px;font-size:13px}}
 </style>
 </head>
-<body>
-
-<header>
-<p>PARANÁ • NATUREZA • AVENTURA</p>
-<h1>Prudentópolis</h1>
-<p>Descubra a Terra das Cachoeiras Gigantes!</p>
-</header>
-
+<body><header id="inicio">
 <nav>
-<a href="#cidade">A cidade</a>
-<a href="#viagem">A viagem</a>
-<a href="#atracoes">Cachoeiras</a>
-<a href="#custos">Custos</a>
-</nav>
-
-<section id="cidade">
-<div class="container">
-<h2>Conheça Prudentópolis</h2>
-<div class="intro">
+<div class="logo">CÉU AZUL · PR</div>
 <div>
-<p>Prudentópolis fica na região Centro-Sul do Paraná e é conhecida por suas grandes cachoeiras, rios, trilhas e belas paisagens.</p>
-<p>A cidade também possui forte influência da cultura ucraniana.</p>
-<p><b>Por que escolhemos esse destino?</b> Para conhecer as belezas naturais do Paraná e aproveitar o turismo de natureza.</p>
+<a href="#cidade">A cidade</a>
+<a href="#atracoes">Atrações</a>
+<a href="#orcamento">Custos</a>
 </div>
-<img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80" alt="Floresta verde ilustrativa">
+</nav>
+<div class="hero">
+<small>Turismo • Paraná • Natureza</small>
+<h1>Descubra<br>Céu Azul</h1>
+<p>Conheça a natureza do oeste paranaense e descubra uma região de florestas, biodiversidade e acesso ao Parque Nacional do Iguaçu.</p>
+<a href="#atracoes" class="botao">Explorar destino</a>
 </div>
+</header><main>
+<section id="cidade">
+<div class="etiqueta">01 — CONHEÇA O DESTINO</div>
+<h2>Natureza no oeste do Paraná</h2>
+<p class="intro">Céu Azul é um município localizado no oeste do Paraná. Sua localização permite conhecer a região e planejar passeios em áreas naturais próximas. As famosas Cataratas do Iguaçu ficam em Foz do Iguaçu, e não dentro do município de Céu Azul.</p><div class="dados">
+<div class="dado">
+<h3>Localização</h3>
+<p>Oeste do Paraná, na região Sul do Brasil.</p>
 </div>
-</section>
-
-<section id="viagem" class="green">
-<div class="container">
-<h2>Planejamento da viagem</h2>
-<div class="cards">
-<div class="card"><div><h3>📅 Data</h3><p>13 a 15 de novembro de 2026</p><p>3 dias e 2 noites.</p></div></div>
-<div class="card"><div><h3>🚌 Transporte</h3><p>Saída de Guarapuava.</p><p><b>Ida e volta:</b> R$ 100,00 estimados.</p></div></div>
-<div class="card"><div><h3>🏨 Hospedagem</h3><p>Hotel ou pousada no centro.</p><p><b>2 noites:</b> R$ 360,00 estimados.</p></div></div>
-<div class="card"><div><h3>🍽️ Alimentação</h3><p>Refeições durante a viagem.</p><p><b>3 dias:</b> R$ 240,00 estimados.</p></div></div>
+<div class="dado">
+<h3>Motivo da visita</h3>
+<p>Conhecer a região, apreciar paisagens naturais e aprender sobre a preservação ambiental.</p>
 </div>
-</div>
-</section>
-
-<section id="atracoes">
-<div class="container">
-<h2>Três atrações turísticas</h2>
-<div class="cards">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80" alt="Cachoeira ilustrativa">
-<div><h3>Salto São Francisco</h3>
-<p>Uma das cachoeiras mais altas e famosas da região.</p>
-<p><b>Local:</b> região rural, na divisa de municípios do Paraná.</p>
-<span class="price">Entrada estimada: R$ 0</span></div>
-</div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80" alt="Natureza ilustrativa">
-<div><h3>Salto São João</h3>
-<p>Uma atração natural com mirantes e belas paisagens.</p>
-<p><b>Local:</b> área rural de Prudentópolis.</p>
-<span class="price">Entrada estimada: R$ 0</span></div>
-</div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80" alt="Paisagem natural ilustrativa">
-<div><h3>Saltos São Sebastião e Mlot</h3>
-<p>Quedas-d'água cercadas por vegetação e paisagens naturais.</p>
-<p><b>Local:</b> região rural de Prudentópolis.</p>
-<span class="price">Entrada estimada: R$ 20</span></div>
+<div class="dado">
+<h3>Natureza</h3>
+<p>A região tem ligação com o Parque Nacional do Iguaçu, importante área de conservação da Mata Atlântica.</p>
 </div>
 </div>
-<p class="note">Imagens ilustrativas. Confirme os valores, o acesso e as regras de visitação antes de viajar.</p>
+</section><section id="atracoes">
+<div class="etiqueta">02 — ATRAÇÕES TURÍSTICAS</div>
+<h2>O que conhecer na região</h2>
+<p class="intro">Confira sugestões de passeios relacionados à natureza. Verifique os acessos, horários e preços antes de viajar.</p><div class="cartoes">
+<article class="cartao">
+<img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80" alt="Floresta verde">
+<div class="conteudo">
+<span class="selo">Natureza</span>
+<h3>Parque Nacional do Iguaçu</h3>
+<p>Área protegida de grande importância ambiental, conhecida por sua floresta, biodiversidade e pelas Cataratas do Iguaçu, localizadas em Foz do Iguaçu.</p>
 </div>
-</section>
-
-<section id="custos" class="green">
-<div class="container">
-<h2>Orçamento por pessoa</h2>
-<table>
+</article><article class="cartao">
+<img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80" alt="Animais na natureza">
+<div class="conteudo">
+<span class="selo">Biodiversidade</span>
+<h3>Fauna e flora</h3>
+<p>Uma oportunidade para aprender sobre as espécies de plantas e animais da região e a importância de proteger seus habitats naturais.</p>
+</div>
+</article><article class="cartao">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Paisagem natural">
+<div class="conteudo">
+<span class="selo">Passeios</span>
+<h3>Turismo ao ar livre</h3>
+<p>Explore opções de passeios pela região oeste do Paraná, sempre verificando os locais permitidos, as condições de acesso e as orientações de segurança.</p>
+</div>
+</article>
+</div>
+</section><section id="orcamento">
+<div class="orcamento">
+<div class="etiqueta">03 — PLANEJAMENTO</div>
+<h2>Roteiro e custos estimados</h2>
+<p class="intro">Exemplo de orçamento escolar para três dias e duas noites, por pessoa, com saída de Guarapuava. Os valores são estimativas, não cotações confirmadas.</p><table>
+<thead>
 <tr><th>Despesa</th><th>Valor estimado</th></tr>
-<tr><td>Transporte ida e volta</td><td>R$ 100,00</td></tr>
-<tr><td>Hospedagem por 2 noites</td><td>R$ 360,00</td></tr>
-<tr><td>Alimentação por 3 dias</td><td>R$ 240,00</td></tr>
-<tr><td>Entradas das atrações</td><td>R$ 20,00</td></tr>
-<tr><th>TOTAL ESTIMADO</th><th>R$ 720,00</th></tr>
-</table>
-<div class="total">
-<p>Valor aproximado da viagem</p>
-<strong>R$ 720,00</strong>
-<p>Por pessoa • 3 dias • 2 noites</p>
-</div>
-<p class="note">Valores simulados para trabalho escolar, não são cotações confirmadas. Os custos reais podem variar.</p>
+</thead>
+<tbody>
+<tr><td>Transporte de ida e volta</td><td>R$ 100,00</td></tr>
+<tr><td>Hospedagem — 2 noites</td><td>R$ 360,00</td></tr>
+<tr><td>Alimentação — 3 dias</td><td>R$ 240,00</td></tr>
+<tr><td>Reserva para passeios</td><td>R$ 50,00</td></tr>
+<tr class="total"><td>Total por pessoa</td><td>R$ 750,00</td></tr>
+</tbody>
+</table><p class="aviso">Importante: os valores devem ser confirmados antes da viagem. Para visitar as Cataratas do Iguaçu, é necessário planejar o deslocamento até Foz do Iguaçu e verificar o preço atualizado dos ingressos. As fotografias desta página são ilustrativas.</p>
 </div>
 </section>
-
-<footer>
-<h3>Prudentópolis - Paraná</h3>
-<p>Terra das Cachoeiras Gigantes</p>
-<p>Conhecer a natureza também é aprender a preservá-la.</p>
-</footer>
-
-</body>
+</main><footer>
+<p>Trabalho escolar de turismo — Céu Azul, Paraná</p>
+<p>Conhecer, respeitar e preservar a natureza.</p>
+</footer></body>
 </html>
